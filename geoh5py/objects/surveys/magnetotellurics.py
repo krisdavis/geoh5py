@@ -15,21 +15,27 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with geoh5py.  If not, see <https://www.gnu.org/licenses/>.
 
-# pylint: disable=unused-import
-# flake8: noqa
+from __future__ import annotations
 
-from .block_model import BlockModel
-from .curve import Curve
-from .drillhole import Drillhole
-from .geo_image import GeoImage
-from .grid2d import Grid2D
-from .label import Label
-from .notype_object import NoTypeObject
-from .object_base import ObjectBase
-from .object_type import ObjectType
-from .octree import Octree
-from .points import Points
-from .surface import Surface
-from .surveys.direct_current import CurrentElectrode, PotentialElectrode
-from .surveys.magnetics import AirborneMagnetics
-from .surveys.magnetotellurics import Magnetotellurics
+import uuid
+
+from ..object_base import ObjectType
+from ..points import Points
+
+
+class Magnetotellurics(Points):
+    """Magnetotelluric survey class"""
+
+    __TYPE_UID = uuid.UUID("{b99bd6e5-4fe1-45a5-bd2f-75fc31f91b38}")
+
+    def __init__(self, object_type: ObjectType, **kwargs):
+        self._metadata: dict | None = None
+
+        super().__init__(object_type, **kwargs)
+
+    @classmethod
+    def default_type_uid(cls) -> uuid.UUID:
+        """
+        :return: Default unique identifier
+        """
+        return cls.__TYPE_UID
