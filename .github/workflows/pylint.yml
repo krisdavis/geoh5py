@@ -1,4 +1,4 @@
-name: static analysis
+name: pylint
 
 on:
   pull_request:
