@@ -8,6 +8,7 @@ on:
       - release/**
       - feature/**
       - hotfix/**
+      - GEOPY-359
 
 jobs:
   pre-commit:
