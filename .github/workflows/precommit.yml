@@ -33,7 +33,5 @@ jobs:
           precommit-${{ env.PY_HASH }}-
           precommit-
     - uses: pre-commit/action@v2.0.0
-    - name: Git show refs
-      run: git show-ref
     - name: Run pre-commit hooks on all files
       run: pre-commit run --all-files
