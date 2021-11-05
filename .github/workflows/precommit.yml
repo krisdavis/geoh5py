@@ -32,6 +32,5 @@ jobs:
         restore-keys: |
           precommit-${{ env.PY_HASH }}-
           precommit-
-    - uses: pre-commit/action@v2.0.0
     - name: Run pre-commit hooks on all files
       run: pre-commit run --all-files
