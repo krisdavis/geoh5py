@@ -33,4 +33,6 @@ jobs:
           precommit-${{ env.PY_HASH }}-
           precommit-
     - name: Run pre-commit hooks on all files
-      run: pre-commit run --all-files
+      uses: pre-commit/action@v2.0.3
+      with:
+        extra_args: --all-files
