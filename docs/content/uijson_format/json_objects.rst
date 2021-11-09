@@ -7,7 +7,7 @@ A parameter who has a ``bool`` value.
 
 .. code-block:: json
    
-   "python_interest": {
+   {
    "main": true,
    "label": "Do you like Python?",
    "value": true,
@@ -27,7 +27,7 @@ A parameter who has an ``int`` value. The optional paramaters ``min`` and ``max`
 
 .. code-block:: json
    
-   "number_of_uis": {
+   {
    "main": true,
    "label": "Number of ui.json files have you created",
    "value": 1,
@@ -56,7 +56,7 @@ precision ``int``
 
 .. code-block:: json
    
-   "cost_of_avocado": {
+   {
    "main": true,
    "label": "Cost per avocado ($)",
    "value": 0.99,
@@ -77,7 +77,7 @@ For a simple string parameter, use an empty ``str`` value to have an empty strin
 
 .. code-block:: json
    
-   "str_param": {
+   {
    "main": true,
    "label": "Name",
    "value": "Default answer"
@@ -95,7 +95,7 @@ For a drop-down of list of strings to choose, use a vector of ``str`` with the m
 
 .. code-block:: json
    
-   "str_param": {
+   {
    "choiceList": ["Northwest Territories", 
    "Yukon",
    "Nunavut"],
@@ -116,7 +116,7 @@ A file parameter comes with an icon to choose the file, with a ``str`` value. Ex
 
 .. code-block:: json
    
-   "model": {
+   {
    "fileDescription": ["Chargeability", "Conductivity"],
    "fileType": ["chg", "con"],
    "main": true,
@@ -139,7 +139,7 @@ To choose an object from a dropdown menu, the *UUID* of the :ref:`Object Type <o
 
 .. code-block:: json
    
-   "points_or_curves": {
+   {
    "meshType": ["{202C5DB1-A56D-4004-9CAD-BAAFD8899406}" ,
       "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}"],
    "main": true,
@@ -181,7 +181,7 @@ In this example, the object parameter *data_mesh* is also given for reference.
 
 .. code-block:: json
  
-
+   {
    "data_channel": {
    "main": true,
    "association": "Vertex",
@@ -198,6 +198,7 @@ In this example, the object parameter *data_mesh* is also given for reference.
    "label": "Select Points or Curve",
    "value": ""
    }
+   }
 
 
 .. figure:: ./images/data_param.png
@@ -211,7 +212,7 @@ In some cases, a simple float will do. The use of the member **isValue** and **p
 
 .. code-block:: json
  
-
+   {
    "uncertainty_channel": {
    "main": true,
    "association": "Vertex",
@@ -231,6 +232,7 @@ In some cases, a simple float will do. The use of the member **isValue** and **p
    "label": "Select Points or Curve",
    "value": ""
    }
+   }
 
 
 .. figure:: ./images/data_value_param.png
@@ -244,7 +246,8 @@ Use the **dependency** and **dependencyType** members to create dependencies. Th
 
 
 .. code-block:: json
- 
+
+   {
    "python_interest": {
    "main": true,
    "label": "Do you like Python?",
@@ -258,6 +261,7 @@ Use the **dependency** and **dependencyType** members to create dependencies. Th
    "dependency": "python_interest",
    "dependencyType": "enabled"
    }
+   {
 
 
 .. figure:: ./images/dependency_ex1.png
@@ -267,6 +271,7 @@ The next example has a dependency on an optional parameter. The member *enabled*
 
 .. code-block:: json
  
+   {
    "territory": {
    "choiceList": ["Northwest Territories", 
    "Yukon",
@@ -286,6 +291,7 @@ The next example has a dependency on an optional parameter. The member *enabled*
    "value": "",
    "dependency": "territory",
    "dependencyType": "enabled"
+   }
    }
 
 
